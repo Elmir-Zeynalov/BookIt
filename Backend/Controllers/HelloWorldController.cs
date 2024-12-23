@@ -6,6 +6,7 @@ namespace Backend.Controllers
     [Route("/HelloWorld")]
     public class HelloWorldController : Controller
     {
+        //TEST
         private readonly ILogger<HelloWorldController> _logger;
         public HelloWorldController(ILogger<HelloWorldController> logger)
         {
