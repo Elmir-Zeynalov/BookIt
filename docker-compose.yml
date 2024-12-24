@@ -1,0 +1,47 @@
+#version: "3.8"
+#
+#services:
+#  backend:
+#    build:
+#      context: .
+#      dockerfile: Backend/Dockerfile
+#    container_name: backend
+#    ports:
+#      - "8080:8080" # Expose backend service
+##      - "8081:8081"
+#    networks:
+#      - app-network
+#
+#  frontend:
+#    build:
+#      context: ./Frontend
+#      dockerfile: Dockerfile
+#    container_name: frontend
+#    ports:
+#      - "3000:80" # Expose frontend service
+#    environment:
+#      - REACT_APP_API_URL=http://backend:8080 # Communicate with the backend
+#    networks:
+#      - app-network
+#
+#networks:
+#  app-network:
+#    driver: bridge
+#
+
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Backend/Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080" # Serve both backend API and frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
