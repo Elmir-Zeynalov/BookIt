@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Connect from './Components/Connect'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import BodyComponent from './Components/BodyComponent'
 
 function App() {
     const [count, setCount] = useState(0)
@@ -10,6 +12,8 @@ function App() {
     return (
         <>
             <div>
+                <BodyComponent></BodyComponent>
+               
                 <Connect>
                 </Connect>
                 <a href="https://vite.dev" target="_blank">
