@@ -13,9 +13,20 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(8080); // Bind to all network interfaces
 });
 
-var app = builder.Build();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // React app's URL
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
-//NEw
+var app = builder.Build();
+app.UseCors("AllowFrontend");
+
+
 // Serve React static files
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -27,13 +38,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//redirecting to the swagger page. Making that the "homepage"
+app.MapGet("/", context => Task.Run(() => context.Response.Redirect("/swagger")));
+
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
 
-//new 
-// Fallback route for React
-app.MapFallbackToFile("index.html");
 app.Run();

@@ -36,12 +36,12 @@
 
 
 # Stage 1: Build the React app
-FROM node:18 AS frontend-build
-WORKDIR /app
-COPY ./frontend/package*.json ./
-RUN npm install
-COPY ./frontend .
-RUN npm run build
+#FROM node:18 AS frontend-build
+#WORKDIR /app
+#COPY ./frontend/package*.json ./
+#RUN npm install
+#COPY ./frontend .
+#RUN npm run build
 
 # Stage 2: Build the .NET app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -61,6 +61,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 # Copy React build files to wwwroot
-COPY --from=frontend-build /app/dist ./wwwroot
+#COPY --from=frontend-build /app/dist ./wwwroot
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "Backend.dll"]

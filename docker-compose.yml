@@ -29,16 +29,44 @@
 #    driver: bridge
 #
 
-version: "3.8"
+#version: "3.8"
+#
+#services:
+#  backend:
+#    build:
+#      context: .
+#      dockerfile: Backend/Dockerfile
+#    container_name: backend
+#    ports:
+#      - "8080:8080" # Serve both backend API and frontend
+#    networks:
+#      - app-network
+#
+#networks:
+#  app-network:
+#    driver: bridge
+#
 
+
+version: "3.8"
 services:
+  frontend:
+    build:
+      context: ./frontend # Path to the frontend folder
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
   backend:
     build:
-      context: .
+      context: . # Path to the Backend folder
       dockerfile: Backend/Dockerfile
     container_name: backend
     ports:
-      - "8080:8080" # Serve both backend API and frontend
+      - "8080:8080"
     networks:
       - app-network
 
