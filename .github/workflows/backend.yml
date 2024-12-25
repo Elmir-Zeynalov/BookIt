@@ -1,0 +1,39 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set Up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0
+
+    - name: Restore Dependencies
+      run: |
+        cd Backend
+        dotnet restore
+
+    - name: Build and Test
+      run: |
+        cd Backend
+        dotnet build --configuration Release
+        dotnet test
+
+    - name: Build Docker Image
+      run: |
+        docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/backend:latest ./Backend
+
+    - name: Push Docker Image to GHCR
+      run: |
+        echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.GH_USERNAME }}" --password-stdin
+        docker push ghcr.io/${{ secrets.GH_USERNAME }}/backend:latest
