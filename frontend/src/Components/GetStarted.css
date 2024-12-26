@@ -7,3 +7,19 @@
 .get-started-guide:hover {
     transform: scale(1.1);
 }
+
+/* 
+.accordion-button.collapsed {
+    background: #3b82f6;
+    color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #3b82f6;
+    color: white;
+}
+*/
+.accordion-button {
+    background: #3b82f6 !important; /* Blue background for all states */
+    color: white !important; /* White text for all states */
+}
