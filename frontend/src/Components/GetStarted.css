@@ -1,0 +1,9 @@
+
+.get-started-guide {
+    margin: 0 15rem;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+.get-started-guide:hover {
+    transform: scale(1.1);
+}

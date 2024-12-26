@@ -1,8 +1,9 @@
 import Accordion from 'react-bootstrap/Accordion';
+import './GetStarted.css';
 
 function GetStartedComponent() {
     return (
-        <Accordion>
+        <Accordion className="get-started-guide">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>How to Get Started?</Accordion.Header>
                 <Accordion.Body>
