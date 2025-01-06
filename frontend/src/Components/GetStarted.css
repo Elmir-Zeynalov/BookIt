@@ -33,6 +33,8 @@
     justify-content: flex-start; /* Align items to the left */
     align-content: flex-start;
     flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 100%;
 }
 
 .get-started-menu-item {
