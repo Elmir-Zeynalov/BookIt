@@ -23,3 +23,12 @@
     background: #3b82f6 !important; /* Blue background for all states */
     color: white !important; /* White text for all states */
 }
+.get-started-menu {
+    display: flex;
+    justify-content : space-between
+    
+}
+
+.get-started-menu-item {
+    border: 1px solid black;
+}
