@@ -10,7 +10,7 @@ function GetStartedMenuItem({ className }: GetStartedMenuItemProps) {
     return (
         <div className={className}>
             <GetStartedMenuItemLogo />
-            <GetStartedMenuItemInfo/>
+            <GetStartedMenuItemInfo className="get-started-menu-item-info"/>
 
       </div>
     

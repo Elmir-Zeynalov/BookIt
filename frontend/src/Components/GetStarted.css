@@ -1,13 +1,17 @@
 
 .get-started-guide {
-    margin: 0 15rem;
+    /* margin: 0 15rem; */
+    margin: 0 auto;
     padding: 1rem;
-    transition: transform 0.2s;
+   
+    max-width: 70%;
 }
-.get-started-guide:hover {
+.get-staretd-guide-header:hover {
     transform: scale(1.1);
 }
-
+.get-staretd-guide-header {
+    transition: transform 0.2s;
+}
 /* 
 .accordion-button.collapsed {
     background: #3b82f6;
@@ -23,12 +27,22 @@
     background: #3b82f6 !important; /* Blue background for all states */
     color: white !important; /* White text for all states */
 }
+
 .get-started-menu {
     display: flex;
-    justify-content : space-between
-    
+    justify-content: flex-start; /* Align items to the left */
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .get-started-menu-item {
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.get-started-menu-item-info {
+    display: flex;
+    flex-direction: column;
+
 }

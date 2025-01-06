@@ -6,7 +6,7 @@ function GetStartedComponent() {
     return (
         <Accordion className="get-started-guide">
             <Accordion.Item eventKey="0">
-                <Accordion.Header>How to Get Started?</Accordion.Header>
+                <Accordion.Header className="get-staretd-guide-header">How to Get Started?</Accordion.Header>
                 <Accordion.Body>
                     <GetStartedMenu className="get-started-menu">
 
