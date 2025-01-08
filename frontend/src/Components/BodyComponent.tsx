@@ -1,4 +1,5 @@
-import GetStartedComponent from "./GetStartedComponent";
+
+import GetStartedComponent from "./GetStartedSection/GetStartedComponent";
 import HeroComponent from "./HeroComponent";
 import NavBar from "./NavBar";
 

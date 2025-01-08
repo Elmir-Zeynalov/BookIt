@@ -1,6 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion';
-import './GetStarted.css';
 import GetStartedMenu from './GetStartedMenu';
+
+
 
 function GetStartedComponent() {
     return (
