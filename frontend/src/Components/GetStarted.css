@@ -57,7 +57,7 @@
     height: auto; /* Ensure card height adjusts to content */
 }
 .get-started-menu-item:hover {
-    transform: scale(1.02);
+    transform: scale(1.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
