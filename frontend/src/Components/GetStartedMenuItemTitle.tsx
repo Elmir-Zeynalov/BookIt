@@ -1,6 +1,10 @@
-function GetStartedMenuItemTitle() {
+type GetStartedMenuItemTitleProps = {
+    header: string;
+};
+
+function GetStartedMenuItemTitle({ header }: GetStartedMenuItemTitleProps) {
     return (
-        <p>Header</p>
+        <p>{header}</p>
     );
 }
 

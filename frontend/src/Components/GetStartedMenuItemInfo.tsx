@@ -6,14 +6,15 @@ import GetStartedMenuItemTitle from "./GetStartedMenuItemTitle";
 
 interface GetStartedMenuItemInfoProps {
     className?: string;
+    header: string;
+    description: string;
 }
 
-
-function GetStartedMenuItemInfo({ className }: GetStartedMenuItemInfoProps) {
+function GetStartedMenuItemInfo({ className, header, description }: GetStartedMenuItemInfoProps) {
     return (
         <div className={className}>
-          <GetStartedMenuItemTitle />
-          <GetStartedMenuItemDescription />
+            <GetStartedMenuItemTitle header={header} />
+            <GetStartedMenuItemDescription description={description} />
       </div>
   );
 }

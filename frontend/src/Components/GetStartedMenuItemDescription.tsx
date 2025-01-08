@@ -1,6 +1,9 @@
-function GetStartedMenuItemDescription() {
+type GetStartedMenuItemDescriptionProps = {
+    description: string;
+};
+function GetStartedMenuItemDescription({ description }: GetStartedMenuItemDescriptionProps) {
     return (
-        <p>Description</p>
+        <p>{description}</p>
     );
 }
 

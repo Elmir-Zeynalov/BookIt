@@ -1,6 +1,10 @@
-function GetStartedMenuItemLogo() {
+interface GetStartedMenuItemLogoProps {
+    className?: string;
+}
+
+function GetStartedMenuItemLogo({ className }: GetStartedMenuItemLogoProps) {
     return (
-        <p>LOGO</p>
+        <p className={className}>LOGO</p>
     );
 }
 

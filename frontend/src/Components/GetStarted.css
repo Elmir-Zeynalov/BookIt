@@ -56,4 +56,10 @@
 .get-started-menu-item-info {
     display: flex;
     flex-direction: column;
+    align-content: center;
+}
+
+
+.get-started-menu-item-logo{
+    align-content: center;
 }
