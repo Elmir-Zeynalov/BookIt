@@ -5,9 +5,11 @@
     padding: 1rem;
     max-width: 70%;
 }
+
 .get-staretd-guide-header:hover {
     transform: scale(1.1);
 }
+
 .get-staretd-guide-header {
     transition: transform 0.2s;
 }
@@ -34,7 +36,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     max-width: 100%;
- 
+    padding: 1rem;
 }
 
 .get-started-menu-item {
@@ -44,40 +46,56 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    flex-direction: row; /* Horizontal layout: Logo on the left, text on the right */
+    align-items: flex-start; /* Align content to the top of the card */
+    gap: 1rem; /* Space between logo and text */
+    padding: 1rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s, box-shadow 0.1s;
     overflow-wrap: break-word;
+    height: auto; /* Ensure card height adjusts to content */
 }
-
-    .get-started-menu-item:hover {
-        transform: scale(1.03);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    }
-
-.get-started-menu-item-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.5rem;
+.get-started-menu-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .get-started-menu-item-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 60px; /* Slightly larger logo */
+    height: 60px;
     background-color: #3b82f6;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Slightly larger logo font size */
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+.get-started-menu-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text block to the top */
+    align-items: flex-start; /* Align text to the left */
+    gap: 0.25rem; /* Space between header and description */
+    text-align: left; /* Ensure text starts from the left */
+}
+.get-started-menu-item-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left; /* Enforce left alignment */
+}
+
+.get-started-menu-item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    text-align: left; /* Enforce left alignment */
 }
 
 /* Responsive adjustments */
