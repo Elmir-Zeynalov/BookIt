@@ -1,3 +1,4 @@
+import PropertyCard from "../../Properties/PropertyCard";
 import { Property } from "../../Properties/types";
 
 interface PropertiesSectionProps {
@@ -10,11 +11,12 @@ function PropertiesSection({ propertyTitle, properties }: PropertiesSectionProps
     return (
         <>
             <h1>{propertyTitle}</h1>
-
             {properties.map((property, index) => (
-                <div key={index}>
-                    <p>{JSON.stringify(property, null, 2)}</p>
-                </div>
+                <PropertyCard
+                    key={index}
+                    className="property-item-card"
+                    propertyInfo={property}
+                />
             ))}
         </>
     );

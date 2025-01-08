@@ -1,16 +1,23 @@
-import PropertyDetailsButton from "./PropertyDetailsButton";
-import PropertyImagesSection from "./PropertyImagesSection";
-import PropertyInformation from "./PropertyInformation";
-import VerifiedBadge from "./VerifiedBadge";
 
-function PropertyCard() {
+import { Property } from "./types";
+
+interface PropertyProps {
+    className: string,
+    propertyInfo: Property;
+}
+
+
+function PropertyCard({ className, propertyInfo }: PropertyProps) {
     return (
-        <>
-            <PropertyImagesSection />
-            <VerifiedBadge />
-            <PropertyInformation />
-            <PropertyDetailsButton />
-      </>
+        <div style={{ border: "1px solid" }} >
+            <h1> IMAGE</h1>
+            <h3>{propertyInfo.apartmentName}</h3>
+            <p>{propertyInfo.apartmentLocation}</p>
+            <p>{propertyInfo.leasing}</p>
+            <p>{propertyInfo.fromDate} - {propertyInfo.toDate}</p>
+
+        </div>
+     
   );
 }
 
