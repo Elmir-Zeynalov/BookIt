@@ -3,7 +3,6 @@
     /* margin: 0 15rem; */
     margin: 0 auto;
     padding: 1rem;
-   
     max-width: 70%;
 }
 .get-staretd-guide-header:hover {
@@ -38,13 +37,23 @@
 }
 
 .get-started-menu-item {
+    flex: 0 1 calc(33.333% - 1rem); 
+    box-sizing: border-box; 
     border: 1px solid black;
     display: flex;
     flex-direction: row;
     gap: 1rem;
 }
+
+.get-started-menu-item:hover {
+    transform: scale(1.1);
+}
+
+.get-started-menu-item {
+    transition: transform 0.1s;
+}
+
 .get-started-menu-item-info {
     display: flex;
     flex-direction: column;
-
 }
