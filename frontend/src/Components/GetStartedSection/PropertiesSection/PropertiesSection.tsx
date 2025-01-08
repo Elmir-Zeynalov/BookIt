@@ -13,11 +13,9 @@ function PropertiesSection({ propertyTitle, properties }: PropertiesSectionProps
 
             {properties.map((property, index) => (
                 <div key={index}>
-                    <div>WTF</div>
                     <p>{JSON.stringify(property, null, 2)}</p>
                 </div>
             ))}
-
         </>
     );
 }
