@@ -1,17 +1,56 @@
 
 import GetStartedComponent from "./GetStartedSection/GetStartedComponent";
 import HeroComponent from "./HeroComponent";
+import SectionHeader from "./SectionHeader";
 import NavBar from "./NavBar";
+import PropertiesSection from "./GetStartedSection/PropertiesSection/PropertiesSection";
+import { Property } from "./Properties/types";
+
+
+
+
 
 function BodyComponent() {
-  return (
-      <>
-          <NavBar />
-          <HeroComponent />
-          <GetStartedComponent/>
-          
-      </>
-  );
+
+    const exampleProperties: Property[] = [
+        {
+            apartmentName: "Oceanview Apartment",
+            apartmentLocation: "Miami, FL",
+            leasing: "Short-Term",
+            fromDate: "2025-01-10",
+            toDate: "2025-01-20",
+            pricePerNight: 150,
+            pricePerMonth: 4000,
+            url: "https://example.com/oceanview",
+        },
+        {
+            apartmentName: "City Center Loft",
+            apartmentLocation: "New York, NY",
+            leasing: "Monthly",
+            fromDate: "2025-02-01",
+            toDate: "2025-02-28",
+            pricePerNight: 200,
+            pricePerMonth: 6000,
+            url: "https://example.com/citycenter",
+        },
+    ];
+
+    return (
+        <>
+            <NavBar />
+            <HeroComponent />
+            <GetStartedComponent />
+            <SectionHeader text="Listings by Borough" />
+            <PropertiesSection propertyTitle="Manhattan Properties" properties={exampleProperties} />
+
+            {/* <PropertiesSection propertyTitle="Brooklyn Properties"  />
+            <PropertiesSection propertyTitle="Bronx Properties"  />
+            <PropertiesSection propertyTitle="Queens Properties"  />
+            <PropertiesSection propertyTitle="Staten Island Properties Properties" />
+            */
+            }
+        </>
+    );
 }
 
 export default BodyComponent;
