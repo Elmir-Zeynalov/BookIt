@@ -6,12 +6,10 @@ import calendarIcon from './calendar-icon.svg';
 import walletIcon from './wallet-icon.svg';
 import './IconStyles.css';
 
-
 interface PropertyProps {
     className: string,
     propertyInfo: Property;
 }
-
 
 function PropertyCard({ className, propertyInfo }: PropertyProps) {
     return (
@@ -25,8 +23,6 @@ function PropertyCard({ className, propertyInfo }: PropertyProps) {
             </div>
             
             <h3 className={className}>{propertyInfo.apartmentName}</h3>
-
-           
             <div className="property-card-container">
                 <div className="property-card-row">
                     <img src={locationIcon} className="property-card-icon" alt="Location Icon" />
@@ -41,10 +37,7 @@ function PropertyCard({ className, propertyInfo }: PropertyProps) {
                     <p className="property-card-text">{propertyInfo.pricePerNight} / {propertyInfo.pricePerMonth}</p>
                 </div>
             </div>
-             
-    
         </div>
-     
   );
 }
 
