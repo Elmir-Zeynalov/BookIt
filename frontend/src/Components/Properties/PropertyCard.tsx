@@ -19,7 +19,7 @@ function PropertyCard({ className, propertyInfo }: PropertyProps) {
                 />    
             </div>
             
-            <h3>{propertyInfo.apartmentName}</h3>
+            <h3 className={className }>{propertyInfo.apartmentName}</h3>
             <p>{propertyInfo.apartmentLocation}</p>
             <p>{propertyInfo.leasing}</p>
             <p>{propertyInfo.fromDate} - {propertyInfo.toDate}</p>
