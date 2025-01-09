@@ -34,3 +34,23 @@
     object-fit: cover; 
     border-bottom: 1px solid #e0e0e0; 
 }
+
+
+.property-card-container {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px; /* Add space between rows */
+    padding: 5px; /* Add padding inside the card */
+}
+
+.property-card-row {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically align icon and text */
+    gap: 5px; /* Space between icon and text */
+}
+
+.property-card-text {
+    margin: 0; /* Remove default paragraph margin */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Set text color */
+}
