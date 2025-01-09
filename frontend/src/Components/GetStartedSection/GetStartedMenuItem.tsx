@@ -1,4 +1,3 @@
-import React from "react";
 import './GetStarted.css';
 import GetStartedMenuItemLogo from "./GetStartedMenuItemLogo";
 import GetStartedMenuItemInfo from "./GetStartedMenuItemInfo";

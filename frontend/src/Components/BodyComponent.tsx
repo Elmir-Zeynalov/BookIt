@@ -3,7 +3,7 @@ import GetStartedComponent from "./GetStartedSection/GetStartedComponent";
 import HeroComponent from "./HeroComponent";
 import SectionHeader from "./SectionHeader";
 import NavBar from "./NavBar";
-import PropertiesSection from "./GetStartedSection/PropertiesSection/PropertiesSection";
+import PropertiesSection from "./Properties/PropertiesSection";
 import { Property } from "./Properties/types";
 
 
@@ -32,6 +32,26 @@ function BodyComponent() {
             pricePerNight: 200,
             pricePerMonth: 6000,
             url: "https://example.com/citycenter",
+        },
+        {
+            apartmentName: "City Center dfasdfasdfasd",
+            apartmentLocation: "New York, NY",
+            leasing: "dfa",
+            fromDate: "2025-02-01",
+            toDate: "2025-02-28",
+            pricePerNight: 200,
+            pricePerMonth: 6000,
+            url: "https://examplasdfasde.com/citycenter",
+        },
+        {
+            apartmentName: "City Corner",
+            apartmentLocation: "Barbados, NY",
+            leasing: "Daily",
+            fromDate: "2025-02-01",
+            toDate: "2025-02-28",
+            pricePerNight: 20000,
+            pricePerMonth: 9000,
+            url: "https://examplsssse.com/citycenter",
         },
     ];
 
