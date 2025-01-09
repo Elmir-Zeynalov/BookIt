@@ -3,7 +3,7 @@ import GetStartedComponent from "./GetStartedSection/GetStartedComponent";
 import HeroComponent from "./HeroComponent";
 import SectionHeader from "./SectionHeader";
 import NavBar from "./NavBar";
-import PropertiesSection from "./GetStartedSection/PropertiesSection/PropertiesSection";
+import PropertiesSection from "./Properties/PropertiesSection";
 import { Property } from "./Properties/types";
 
 
