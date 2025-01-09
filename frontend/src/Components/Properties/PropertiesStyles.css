@@ -1,4 +1,31 @@
 .property-container {
     display: flex;
-   
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 10px;
+}
+.property-card {
+    width: 250px; /* Fixed width for all cards */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background */
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align content */
+}
+
+.property-image-wrapper {
+    width: 100%; /* Match the width of the card */
+    height: 200px; /* Fixed height for consistency */
+    overflow: hidden; /* Crop images that are too large */
+}
+
+.property-image {
+    width: 100%; /* Fill the width of the wrapper */
+    height: 100%; /* Fill the height of the wrapper */
+    object-fit: cover; /* Crop the image to maintain aspect ratio */
+    border-bottom: 1px solid #e0e0e0; /* Optional: border under the image */
 }

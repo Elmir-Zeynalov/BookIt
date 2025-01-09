@@ -10,18 +10,12 @@ interface PropertyProps {
 
 function PropertyCard({ className, propertyInfo }: PropertyProps) {
     return (
-        <div style={{ border: "1px solid"}} >
-            <div style={{ border: "1px solid", width: '250px', height: '200px', overflow: 'hidden' }}>
+        <div className="property-card" >
+            <div className = "property-image-wrapper">
                 <img
                     src={myImage}
                     alt="Italian Trulli"
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        objectFit: 'contain',
-                        maxWidth: '100%',
-                        borderRadius: '10px',
-                    }}
+                    className= "property-image"
                 />    
             </div>
             
