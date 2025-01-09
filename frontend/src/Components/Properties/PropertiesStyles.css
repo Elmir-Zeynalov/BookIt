@@ -6,26 +6,51 @@
     padding: 10px;
 }
 .property-card {
-    width: 250px; /* Fixed width for all cards */
-    border: 1px solid #e0e0e0; /* Light border */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensure content doesn't overflow */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background-color: #fff; /* White background */
+    width: 350px; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
     display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center align content */
+    flex-direction: column; 
+    align-items: flex-start; 
 }
+.property-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s;
+    }
 
 .property-image-wrapper {
-    width: 100%; /* Match the width of the card */
-    height: 200px; /* Fixed height for consistency */
-    overflow: hidden; /* Crop images that are too large */
+    width: 100%; 
+    height: 200px;
+    overflow: hidden; 
 }
 
 .property-image {
-    width: 100%; /* Fill the width of the wrapper */
-    height: 100%; /* Fill the height of the wrapper */
-    object-fit: cover; /* Crop the image to maintain aspect ratio */
-    border-bottom: 1px solid #e0e0e0; /* Optional: border under the image */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+
+.property-card-container {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px; /* Add space between rows */
+    padding: 5px; /* Add padding inside the card */
+}
+
+.property-card-row {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically align icon and text */
+    gap: 5px; /* Space between icon and text */
+}
+
+.property-card-text {
+    margin: 0; /* Remove default paragraph margin */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Set text color */
 }

@@ -14,9 +14,9 @@ function BodyComponent() {
 
     const exampleProperties: Property[] = [
         {
-            apartmentName: "Oceanview Apartment",
-            apartmentLocation: "Miami, FL",
-            leasing: "Short-Term",
+            apartmentName: "Karina's Apartment",
+            apartmentLocation: "Gramercy",
+            leasing: "Enter Place",
             fromDate: "2025-01-10",
             toDate: "2025-01-20",
             pricePerNight: 150,
@@ -24,17 +24,17 @@ function BodyComponent() {
             url: "https://example.com/oceanview",
         },
         {
-            apartmentName: "City Center Loft",
-            apartmentLocation: "New York, NY",
-            leasing: "Monthly",
-            fromDate: "2025-02-01",
-            toDate: "2025-02-28",
-            pricePerNight: 200,
-            pricePerMonth: 6000,
+            apartmentName: "Tapavi's Apartment",
+            apartmentLocation: "Financial District",
+            leasing: "Entire Place",
+            fromDate: "Anny dates requestable",
+            toDate: "",
+            pricePerNight: 0,
+            pricePerMonth: 0,
             url: "https://example.com/citycenter",
         },
         {
-            apartmentName: "City Center dfasdfasdfasd",
+            apartmentName: "Alex's Apartment",
             apartmentLocation: "New York, NY",
             leasing: "dfa",
             fromDate: "2025-02-01",
@@ -44,7 +44,7 @@ function BodyComponent() {
             url: "https://examplasdfasde.com/citycenter",
         },
         {
-            apartmentName: "City Corner",
+            apartmentName: "Alexander's Apartment",
             apartmentLocation: "Barbados, NY",
             leasing: "Daily",
             fromDate: "2025-02-01",
