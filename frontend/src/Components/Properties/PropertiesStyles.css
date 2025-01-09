@@ -6,7 +6,7 @@
     padding: 10px;
 }
 .property-card {
-    width: 250px; /* Fixed width for all cards */
+    width: 350px; /* Fixed width for all cards */
     border: 1px solid #e0e0e0; /* Light border */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Ensure content doesn't overflow */
@@ -14,8 +14,13 @@
     background-color: #fff; /* White background */
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center align content */
+    align-items: flex-start; /* Center align content */
 }
+.property-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s;
+    }
 
 .property-image-wrapper {
     width: 100%; /* Match the width of the card */
