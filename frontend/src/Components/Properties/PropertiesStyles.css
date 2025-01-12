@@ -23,9 +23,10 @@
     }
 
 .property-image-wrapper {
-    width: 100%; 
+    width: 100%;
     height: 200px;
-    overflow: hidden; 
+    overflow: hidden;
+    position: relative;
 }
 
 .property-image {
@@ -55,3 +56,26 @@
     color: #333; /* Set text color */
 }
 
+.nav-button {
+    position: absolute; /* Position buttons relative to the wrapper */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10; /* Ensures buttons stay above the image */
+}
+
+.prev-button {
+    left: 10px; /* Position the "previous" button on the left */
+}
+
+.next-button {
+    right: 10px; /* Position the "next" button on the right */
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
