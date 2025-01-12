@@ -37,7 +37,7 @@ function PropertyCard({ className, propertyInfo }: PropertyProps) {
                     <p className="property-card-text">{propertyInfo.pricePerNight} / {propertyInfo.pricePerMonth}</p>
                 </div>
             </div>
-            <button>View Details</button>
+            <button className="property-card-details-button">View Details</button>
         </div>
   );
 }
