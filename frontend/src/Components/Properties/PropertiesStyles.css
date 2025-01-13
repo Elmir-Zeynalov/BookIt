@@ -25,7 +25,7 @@
 .property-image-wrapper {
     width: 100%;
     height: 200px;
-    overflow: hidden;
+    
     position: relative;
 }
 
@@ -78,4 +78,24 @@
 
 .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+
+.carousel-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+          gap: 5px;
+}
+
+.carousel-circle {
+    background-color: #6e6a6c;
+    width: 50px; /* Equal width */
+    height: 50px; /* Equal height */
+    border-radius: 50%; /* Makes it a circle */
+    border: solid 1px black;
+}
+
+.active {
+    background-color: #ffffff; /* Change color for active circle */
 }

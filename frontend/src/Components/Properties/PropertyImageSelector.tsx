@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CarouselComponent from "./CarouselComponent";
 
 
 interface PropertyImageSelectorProps {
@@ -16,6 +17,10 @@ function PropertyImageSelector({ images }: PropertyImageSelectorProps) {
         setCurrentImage((currentImage - 1 + images.length) % images.length);
     }
 
+    const setImage = (index: number) => {   
+        setCurrentImage(index);
+    }
+
     return (
       <>
             <img
@@ -25,6 +30,8 @@ function PropertyImageSelector({ images }: PropertyImageSelectorProps) {
             />
             <button className="nav-button prev-button" onClick={prevImage}>&lt;</button>
             <button className="nav-button next-button" onClick={nextImage}>&gt;</button>
+            <CarouselComponent images={images} currentImage={currentImage} setCurrentImage={setImage} />
+
       </>
      
   );
