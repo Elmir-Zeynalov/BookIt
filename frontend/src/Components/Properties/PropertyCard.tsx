@@ -1,10 +1,12 @@
 
 import { Property } from "./types";
 import myImage from './0be04875-2131-49b7-ab6e-867378b82f32_IMG_1152.jpeg';
+import secondImage from './3cf1ba8c-ef64-434b-81b7-44c893319e87_IMG_1160.jpeg';
 import locationIcon from './location-icon.svg';
 import calendarIcon from './calendar-icon.svg';
 import walletIcon from './wallet-icon.svg';
 import './IconStyles.css';
+import PropertyImageSelector from "./PropertyImageSelector";
 
 interface PropertyProps {
     className: string,
@@ -12,14 +14,16 @@ interface PropertyProps {
 }
 
 function PropertyCard({ className, propertyInfo }: PropertyProps) {
+    const images = [myImage, secondImage];
+
     return (
         <div className="property-card" >
-            <div className = "property-image-wrapper">
-                <img
-                    src={myImage}
-                    alt="Italian Trulli"
-                    className= "property-image"
-                />    
+            <div className="property-image-wrapper">
+                <PropertyImageSelector images={images}>
+
+                </PropertyImageSelector>
+               
+                
             </div>
             
             <h3 className={className}>{propertyInfo.apartmentName}</h3>
@@ -37,6 +41,7 @@ function PropertyCard({ className, propertyInfo }: PropertyProps) {
                     <p className="property-card-text">{propertyInfo.pricePerNight} / {propertyInfo.pricePerMonth}</p>
                 </div>
             </div>
+            <button className="property-card-details-button">View Details</button>
         </div>
   );
 }

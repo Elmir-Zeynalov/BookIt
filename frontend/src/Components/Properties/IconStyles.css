@@ -1,8 +1,8 @@
 .property-card-icon {
-    width: 2vw; /* Width is 5% of the viewport width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 50px; /* Prevent icons from getting too big on large screens */
-    min-width: 20px; /* Prevent icons from getting too small on small screens */
+    width: 2vw; 
+    height: auto; 
+    max-width: 50px; 
+    min-width: 20px; 
 
     object-fit: contain; /* Ensure icons maintain aspect ratio */
 }
@@ -14,4 +14,14 @@
 .property-card-icon-container {
     display: flex;
     flex-direction: column;
+}
+
+.property-card-details-button {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 45px;
+    width: 95%;
+    margin: 10px auto;
+    background-color: #3b82f6;
+    color: #fff;
 }
