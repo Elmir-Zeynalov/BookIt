@@ -81,19 +81,25 @@
 }
 
 
-.carousel-container{
+.carousel-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-          gap: 5px;
+    gap: 5px;
+    position: absolute; 
+    left: 50%;
+    bottom: 5%;
+    transform: translateY(-50%); 
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Ensures buttons stay above the image */
 }
 
 .carousel-circle {
     background-color: #6e6a6c;
-    width: 50px; /* Equal width */
-    height: 50px; /* Equal height */
+    width: 8px; /* Equal width */
+    height: 8px; /* Equal height */
     border-radius: 50%; /* Makes it a circle */
-    border: solid 1px black;
 }
 
 .active {
