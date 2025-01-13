@@ -1,7 +1,3 @@
-
-
-
-
 interface CarouselProps {
     images: Array<string>;
     currentImage: number;
@@ -10,7 +6,7 @@ interface CarouselProps {
 
 function CarouselComponent({ images, currentImage, setCurrentImage }: CarouselProps) {
     const numberOfCircles = images.map((image, index) => (
-        <div key={index} className={`carousel-circle ${index === currentImage ? 'active' : ''}`}></div>
+        <div key={index} className={`carousel-circle ${index === currentImage ? 'active' : ''}`} onClick={() => setCurrentImage(index)}></div>
     ));
 
     return (
