@@ -5,6 +5,7 @@ import SectionHeader from "./SectionHeader";
 import NavBar from "./NavBar";
 import PropertiesSection from "./Properties/PropertiesSection";
 import { Property } from "./Properties/types";
+import FooterSection from "./FooterSection/FooterSection";
 
 
 
@@ -62,7 +63,7 @@ function BodyComponent() {
             <GetStartedComponent />
             <SectionHeader text="Listings by Borough" />
             <PropertiesSection propertyTitle="Manhattan Properties" properties={exampleProperties} />
-
+            <FooterSection></FooterSection>
             {/* <PropertiesSection propertyTitle="Brooklyn Properties"  />
             <PropertiesSection propertyTitle="Bronx Properties"  />
             <PropertiesSection propertyTitle="Queens Properties"  />
