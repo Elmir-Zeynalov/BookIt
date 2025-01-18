@@ -1,3 +1,6 @@
+using Backend.Database;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
+{
+    optionsBuilder.UseSqlServer(builder.Configuration["DbConnectionString"]!);
+});
 
 // Explicitly configure Kestrel to bind to port 8080 on all interfaces
 builder.WebHost.ConfigureKestrel(options =>
