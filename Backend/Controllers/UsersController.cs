@@ -64,6 +64,5 @@ namespace Backend.Controllers
                 user.Email
             });
         }
-
     }
 }
