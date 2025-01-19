@@ -37,7 +37,6 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors("AllowFrontend");
 
-
 // Serve React static files
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -58,5 +57,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
