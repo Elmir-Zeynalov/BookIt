@@ -30,7 +30,7 @@ namespace Backend.Services.ListingServices
             await _dbContext.SaveChangesAsync();
             return listing;
         }
-        public async Task<List<Listing>> GetAllUsersAsync()
+        public async Task<List<Listing>> GetAllListingsAsync()
         {
             return await _dbContext.Listings.ToListAsync();
         }

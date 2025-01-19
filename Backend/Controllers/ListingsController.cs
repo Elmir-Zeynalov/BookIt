@@ -39,10 +39,7 @@ namespace Backend.Controllers
                 return BadRequest(ModelState);
             }
             var listing = await _listingServices.CreateListingAsync(listingDto);
-            if (listing == null)
-            {
-                return BadRequest(new { message = "Listing already exists" });
-            }
+
             return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
         }
         [HttpGet("{id}")]
