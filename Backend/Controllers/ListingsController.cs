@@ -1,4 +1,5 @@
-﻿using Backend.Services.ListingServices;
+﻿using Backend.Dtos;
+using Backend.Services.ListingServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -14,11 +15,12 @@ namespace Backend.Controllers
             _logger = logger;
             _listingServices = listingServices;
         }
+
         /// <summary>
         /// Get all listings
         /// </summary>
         /// <returns></returns>
-        [HttpGet(Name = "GetListings")]
+        [HttpGet(Name = "GetAllListings")]
         public async Task<IActionResult> Get()
         {
             var listings = await _listingServices.GetAllListingsAsync();
@@ -36,7 +38,7 @@ namespace Backend.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var listing = await _listingServices.CreateListingAsync(listingDto.Title, listingDto.Description, listingDto.Location, listingDto.Rooms, listingDto.Price, listingDto.Availability, listingDto.UserID);
+            var listing = await _listingServices.CreateListingAsync(listingDto);
             if (listing == null)
             {
                 return BadRequest(new { message = "Listing already exists" });
@@ -61,7 +63,5 @@ namespace Backend.Controllers
                 listing.UserID
             });
         }
-
-
     }
 }
