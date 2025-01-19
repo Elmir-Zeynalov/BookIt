@@ -1,23 +1,43 @@
-﻿using Backend.Dtos;
+﻿using Backend.Database;
+using Backend.Dtos;
 using Backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services.ListingServices
 {
     public class ListingServices : IListingServices
     {
-        public Task<Listing> CreateListingAsync(ListingCreateDto listingDto)
+
+        private readonly AppDbContext _dbContext;
+        public ListingServices(AppDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public Task<List<Listing>> GetAllListingsAsync()
+        public async Task<Listing> CreateListingAsync(ListingCreateDto listingDto)
         {
-            throw new NotImplementedException();
+            var listing = new Listing
+            {
+                Title = listingDto.Title,
+                Description = listingDto.Description,
+                Location = listingDto.Location,
+                Rooms = listingDto.Rooms,
+                Price = listingDto.Price,
+                UserID = listingDto.UserId
+            };
+
+            _dbContext.Listings.Add(listing);
+            await _dbContext.SaveChangesAsync();
+            return listing;
+        }
+        public async Task<List<Listing>> GetAllUsersAsync()
+        {
+            return await _dbContext.Listings.ToListAsync();
         }
 
-        public Task<Listing> GetListingByIdAsync(int id)
+        public async Task<Listing?> GetListingByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Listings.FindAsync(id);
         }
     }
 }
