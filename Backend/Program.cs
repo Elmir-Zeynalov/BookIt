@@ -1,4 +1,5 @@
 using Backend.Database;
+using Backend.Services.PasswordServices;
 using Backend.Services.UserServices;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
     optionsBuilder.UseSqlServer(builder.Configuration["DbConnectionString"]!);
 });
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 // Explicitly configure Kestrel to bind to port 8080 on all interfaces
 builder.WebHost.ConfigureKestrel(options =>

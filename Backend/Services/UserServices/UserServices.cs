@@ -1,5 +1,7 @@
 ﻿using Backend.Database;
 using Backend.Models;
+using Backend.Services.PasswordServices;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services.UserServices
@@ -7,9 +9,12 @@ namespace Backend.Services.UserServices
     public class UserServices : IUserServices
     {
         private readonly AppDbContext _dbContext;
-        public UserServices(AppDbContext context)
+        private readonly IPasswordHasher _passwordHasher;
+
+        public UserServices(AppDbContext context, IPasswordHasher passwordHasher)
         {
             _dbContext = context;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<User?> GetUserByIdAsync(int id)
@@ -19,13 +24,13 @@ namespace Backend.Services.UserServices
 
         public async Task<User> CreateUserAsync(string firstname, string lastname, string email, string password)
         {
-            var user = new User 
+            var user = new User
             {
                 Id = Guid.NewGuid(),
                 FirstName = firstname,
                 LastName = lastname,
-                Email = email, 
-                Password = password 
+                Email = email,
+                Password = _passwordHasher.Hash(password)
             };
 
             _dbContext.Users.Add(user);
