@@ -8,7 +8,7 @@ namespace Backend.Services.UserServices
         Task Insert(User user);
         Task<User?> GetByEmail(string email);
         Task<User?> GetUserByIdAsync(int id);
-        Task<User> CreateUserAsync(string firstname, string lastname, string email, string password);
+        Task<User?> CreateUserAsync(string firstname, string lastname, string email, string password);
 
         Task<List<User>> GetAllUsersAsync();
     }

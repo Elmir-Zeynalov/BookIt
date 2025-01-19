@@ -34,7 +34,7 @@ namespace Backend.Controllers
         /// </summary>
         /// <param name="userDto">The user data transfer object.</param>
         /// <returns>The created user.</returns>
-        [HttpPost("User", Name = "PostUser")]
+        [HttpPost("RegisterUser", Name = "PostUser")]
         public async Task<IActionResult> Post(UserCreateDto userDto)
         {
             if (!ModelState.IsValid)
@@ -43,6 +43,11 @@ namespace Backend.Controllers
             }
 
             var user = await _userServices.CreateUserAsync(userDto.Firstname, userDto.Lastname, userDto.Email, userDto.Password);
+
+            if (user == null)
+            {
+                return BadRequest(new { message = "User already exists" });
+            }
 
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }

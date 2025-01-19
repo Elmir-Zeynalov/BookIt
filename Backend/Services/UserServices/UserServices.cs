@@ -22,8 +22,14 @@ namespace Backend.Services.UserServices
             return await _dbContext.Users.FindAsync(id);
         }
 
-        public async Task<User> CreateUserAsync(string firstname, string lastname, string email, string password)
+        public async Task<User?> CreateUserAsync(string firstname, string lastname, string email, string password)
         {
+            var userExists = await _dbContext.Users.AnyAsync(u => u.Email == email);
+            if (userExists)
+            {
+                return null;
+            }
+
             var user = new User
             {
                 Id = Guid.NewGuid(),
