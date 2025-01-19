@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Backend.Database;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
 {
@@ -7,6 +8,7 @@ namespace Backend.Controllers
     public class UsersController : Controller
     {
         private readonly ILogger<HelloWorldController> _logger;
+
         public UsersController(ILogger<HelloWorldController> logger)
         {
             _logger = logger;
