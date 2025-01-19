@@ -1,4 +1,5 @@
 using Backend.Database;
+using Backend.Services.UserServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
 {
     optionsBuilder.UseSqlServer(builder.Configuration["DbConnectionString"]!);
 });
+builder.Services.AddScoped<IUserServices, UserServices>();
 
 // Explicitly configure Kestrel to bind to port 8080 on all interfaces
 builder.WebHost.ConfigureKestrel(options =>
