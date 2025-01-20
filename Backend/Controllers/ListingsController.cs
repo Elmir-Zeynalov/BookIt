@@ -10,6 +10,7 @@ namespace Backend.Controllers
     {
         private readonly ILogger<ListingsController> _logger;
         private readonly IListingServices _listingServices;
+        
         public ListingsController(ILogger<ListingsController> logger, IListingServices listingServices)
         {
             _logger = logger;
@@ -26,6 +27,7 @@ namespace Backend.Controllers
             var listings = await _listingServices.GetAllListingsAsync();
             return Ok(listings);
         }
+
         /// <summary>
         /// Creates a new listing.
         /// </summary>
@@ -42,6 +44,12 @@ namespace Backend.Controllers
 
             return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
         }
+
+        /// <summary>
+        /// Get a listing by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A listing with the specified id</returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetListing(int id)
         {
