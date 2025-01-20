@@ -11,5 +11,9 @@ namespace Backend.Database
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Listing> Listings { get; set; }
+        public DbSet<ListingImage> ListingImages { get; set; }
+
+
     }
 }
