@@ -21,7 +21,7 @@ namespace Backend.Models
 
         [Required]
         [Range(1, 100)] // Example range for number of rooms
-        public int Rooms { get; set; }
+        public int NumberOfRooms { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(10,2)")] // Explicit precision for decimal in SQL

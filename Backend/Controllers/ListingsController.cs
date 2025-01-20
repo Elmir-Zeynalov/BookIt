@@ -53,7 +53,7 @@ namespace Backend.Controllers
                 listing.Title,
                 listing.Description,
                 listing.Location,
-                listing.Rooms,
+                listing.NumberOfRooms,
                 listing.Price,
                 listing.Availability,
                 listing.CreatedDate,

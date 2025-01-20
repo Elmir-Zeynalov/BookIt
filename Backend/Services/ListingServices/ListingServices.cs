@@ -21,7 +21,7 @@ namespace Backend.Services.ListingServices
                 Title = listingDto.Title,
                 Description = listingDto.Description,
                 Location = listingDto.Location,
-                Rooms = listingDto.Rooms,
+                NumberOfRooms = listingDto.NumberOfRooms,
                 Price = listingDto.Price,
                 UserID = listingDto.UserId
             };

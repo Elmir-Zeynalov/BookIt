@@ -7,7 +7,7 @@ namespace Backend.Dtos
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
-        public int Rooms { get; set; }
+        public int NumberOfRooms { get; set; }
         public decimal Price { get; set; }
         [Required]
         public Guid UserId { get; set; }
