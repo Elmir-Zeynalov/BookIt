@@ -8,5 +8,7 @@
         Task DeleteContainerAsync(string containerName);
         Task<IEnumerable<string>> ListBlobsAsync(string containerName);
         Task<Stream> GetBlobAsync(string blobName, string containerName);
+        Task<string> UploadImageAsync(IFormFile file);
+
     }
 }

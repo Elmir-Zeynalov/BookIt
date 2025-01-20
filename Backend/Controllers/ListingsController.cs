@@ -1,4 +1,5 @@
 ﻿using Backend.Dtos;
+using Backend.Services.BlobStorageServices;
 using Backend.Services.ListingServices;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +11,13 @@ namespace Backend.Controllers
     {
         private readonly ILogger<ListingsController> _logger;
         private readonly IListingServices _listingServices;
-        
-        public ListingsController(ILogger<ListingsController> logger, IListingServices listingServices)
+        private readonly IBlobImageHandlingServices _imageHandlingServices;
+
+        public ListingsController(ILogger<ListingsController> logger, IListingServices listingServices, IBlobImageHandlingServices imageHandlingServices)
         {
             _logger = logger;
             _listingServices = listingServices;
+            _imageHandlingServices = imageHandlingServices;
         }
 
         /// <summary>
@@ -36,13 +39,32 @@ namespace Backend.Controllers
         [HttpPost("CreateListing", Name = "PostListing")]
         public async Task<IActionResult> Post(ListingCreateDto listingDto)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
-            var listing = await _listingServices.CreateListingAsync(listingDto);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
+                var listing = await _listingServices.CreateListingAsync(listingDto);
+                if (listing == null)
+                {
+                    return BadRequest(new { message = "Error creating Listing" });
+                }
+
+                var images = await _imageHandlingServices.UploadImagesAsync(listingDto.Images);
+                if (images == null)
+                {
+                    return BadRequest(new { message = "Error uploading images" });
+                }
+
+                return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error occurred while creating the listing.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An unexpected error occurred. Please try again later." });
+            }
         }
 
         /// <summary>
