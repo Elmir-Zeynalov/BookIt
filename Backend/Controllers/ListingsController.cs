@@ -54,6 +54,7 @@ namespace Backend.Controllers
 
                 var images = await _imageHandlingServices.UploadImagesAsync(listingDto.Images, listing.ListingID);
 
+                //TODO: WIll need to adjust DTO for returning images
                 var listingDtoRet = new ListingCreateDto
                 {
                    

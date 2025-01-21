@@ -47,7 +47,6 @@ namespace Backend.Services.BlobStorageServices
             {
                 _logger.LogError(ex, "An error occurred while uploading images.");
                 throw; // Re-throw the exception to propagate it to the caller
-
             }
         }
     }
