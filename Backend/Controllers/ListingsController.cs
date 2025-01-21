@@ -54,7 +54,16 @@ namespace Backend.Controllers
 
                 var images = await _imageHandlingServices.UploadImagesAsync(listingDto.Images, listing.ListingID);
 
-                return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
+                var listingDtoRet = new ListingCreateDto
+                {
+                   
+                    Title = listing.Title,
+                    Description = listing.Description,
+                    Price = listing.Price
+                };
+
+
+                return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listingDtoRet);
             }
             catch (Exception e)
             {
