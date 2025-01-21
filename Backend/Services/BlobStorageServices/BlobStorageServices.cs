@@ -12,8 +12,8 @@ namespace Backend.Services.BlobStorageServices
 
         public BlobStorageServices(IConfiguration configuration)
         {
-            _connectionString = configuration["AzureBlobStorage:ConnectionString"];
-            _containerName = configuration["AzureBlobStorage:ContainerName"];
+            _connectionString = configuration["AzureBlobStorage:ConnectionString"]!;
+            _containerName = configuration["AzureBlobStorage:ContainerName"]!;
         }
 
         public Task DeleteBlobAsync(string blobName, string containerName)
