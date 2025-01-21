@@ -35,6 +35,7 @@ namespace Backend.Services.BlobStorageServices
             }
 
             await _dbContext.ListingImages.AddRangeAsync(uploadedImages);
+            await _dbContext.SaveChangesAsync();
 
             return uploadedImages;
             
