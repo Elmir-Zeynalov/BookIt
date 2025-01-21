@@ -52,11 +52,7 @@ namespace Backend.Controllers
                     return BadRequest(new { message = "Error creating Listing" });
                 }
 
-                var images = await _imageHandlingServices.UploadImagesAsync(listingDto.Images);
-                if (images == null)
-                {
-                    return BadRequest(new { message = "Error uploading images" });
-                }
+                var images = await _imageHandlingServices.UploadImagesAsync(listingDto.Images, listing.ListingID);
 
                 return CreatedAtAction(nameof(GetListing), new { id = listing.ListingID }, listing);
             }
