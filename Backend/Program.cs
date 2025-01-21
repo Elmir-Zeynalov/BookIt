@@ -1,3 +1,4 @@
+using Azure.Identity;
 using Backend.Database;
 using Backend.Services.BlobStorageServices;
 using Backend.Services.ListingServices;
@@ -5,10 +6,18 @@ using Backend.Services.PasswordServices;
 using Backend.Services.UserServices;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add KeyVault secrets to configuration
+var keyVaultName = builder.Configuration["KeyVaultName"];
+if(!string.IsNullOrEmpty(keyVaultName))
+{
+    var keyVaultUri = new Uri($"https://{keyVaultName}.vault.azure.net/");
+    builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
+}
 
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
