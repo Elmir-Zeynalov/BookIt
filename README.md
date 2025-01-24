@@ -29,7 +29,7 @@ I wanted to challenge myself with a full-stack project that blends UI/UX design 
 
 #### Hosting:
 
-- **Amazon AWS**: Hosting the backend and database.
+- **Azure**: Hosting the backend and database.
 - **Docker**: For containerizing the application to ensure easy deployment.
 
 ### Future Goals
