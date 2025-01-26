@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services.AuthenticationServices
 {
-    public class AuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly AppDbContext _dbContext;
 
@@ -18,16 +18,16 @@ namespace Backend.Services.AuthenticationServices
         }
 
 
-        public bool AuthenticateUser(string email, string password)
+        public async Task<bool> AuthenticateUser(string email, string password)
         {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == email);
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
             {
                 return false;
             }
 
             PasswordHasher hasher = new PasswordHasher();
-            var passwordCheckPassed = hasher.VerifyPassword(password, user.Password);
+            var passwordCheckPassed = hasher.Verify(password, user.Password);
             return passwordCheckPassed;
         }
     }

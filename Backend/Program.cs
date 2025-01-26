@@ -1,4 +1,5 @@
 using Backend.Database;
+using Backend.Services.AuthenticationServices;
 using Backend.Services.BlobStorageServices;
 using Backend.Services.ListingServices;
 using Backend.Services.PasswordServices;
@@ -22,7 +23,7 @@ builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IListingServices, ListingServices>();
 builder.Services.AddScoped<IBlobImageHandlingServices, BlobImageHandlingServices>();
 builder.Services.AddScoped<IBlobStorageService, BlobStorageServices>();
-
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 // Explicitly configure Kestrel to bind to port 8080 on all interfaces
 builder.WebHost.ConfigureKestrel(options =>
