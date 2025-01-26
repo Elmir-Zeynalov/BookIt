@@ -1,7 +1,11 @@
-﻿namespace Backend.Services.AuthenticationServices
+﻿
+
+using Backend.Dtos;
+
+namespace Backend.Services.AuthenticationServices
 {
     public interface IAuthenticationService
     {
-        Task<bool> AuthenticateUser(string email, string password);
+        Task<AuthenticationResult> AuthenticateUser(string email, string password);
     }
 }

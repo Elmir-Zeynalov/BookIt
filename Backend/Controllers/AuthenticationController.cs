@@ -28,8 +28,8 @@ namespace Backend.Controllers
                 return Ok(result);
             }catch(Exception e)
             {
-
-                return BadRequest();
+                _logger.LogError(e, "An unexpected error occurred.");
+                return StatusCode(500, "An unexpected error occurred.");
             }
         }
     }
