@@ -28,8 +28,8 @@ I wanted to challenge myself with a full-stack project that blends UI/UX design 
 - **Relational Database (SQL Server)**: To manage user data, bookings, and property details.
 
 #### Hosting:
-
-- **Azure**: Hosting the backend and database.
+Not so sure about this but for now:
+- **Azure**: Hosting the backend and database. 
 - **Docker**: For containerizing the application to ensure easy deployment.
 
 ### Future Goals
